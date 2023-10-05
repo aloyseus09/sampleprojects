@@ -16,6 +16,21 @@
         font-family: Helvetica, sans-serif;
     }
 
+    .table {
+        background-color: linen;
+      border-style: double;
+      border-width: 5px;
+      border-radius: 5px;
+      max-width: 300px;
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+      text-align: center;
+      padding: 10px;
+        font-family: Helvetica, sans-serif;
+
+    }
+
     .elem {
         
         border-width: 5px;
@@ -44,6 +59,19 @@
 
     }
 
+    .tabledesign{
+        background-color: linen;
+        text-align: center;
+    }
+    tr:hover {background-color: #b8caec;}
+    th, td {
+    padding: 3px;
+    text-align: center;
+    border-bottom: 1px solid #DDD;
+    }
+
+
+
     </style>
 </head>
 <body>
@@ -69,6 +97,81 @@
         
         <output name="grade" for="q1 q2 q3"></output>
     </form>
+    <h3 class="title">Conversion</h3>
+
+
+    <div class="table">
+    <table align="center" width="280">
+    <tr class="tabledesign"><!--adding rows-->
+    <th width="70">Grade</th>
+    <th width="70">Equivalent</th>
+    <th width="70">Pass/Fail/INC</th>
+    </tr>
+
+    <tr class="tabledesign">
+    <td>5.00</td><!--data below the first row-->
+    <td>72 and below</td>
+    <td>Failed</td>
+    </tr>
+    
+    <tr class="tabledesign">
+    <td>4.00</td><!--data below the first row-->
+    <td>73 - 74</td>
+    <td>INC</td>
+    </tr>
+
+    <tr class="tabledesign">
+        <td>3.00</td><!--data below the first row-->
+        <td>75 - 76</td>
+        <td>Passed</td>
+        </tr>
+
+    <tr class="tabledesign">
+    <td>2.75</td><!--data below the first row-->
+    <td>77 - 79</td>
+    <td>Passed</td>
+    </tr>
+    <tr class="tabledesign">
+        <td>2.50</td><!--data below the first row-->
+        <td>80 - 82</td>
+        <td>Passed</td>
+    </tr>
+    
+    <tr class="tabledesign">
+        <td>2.25</td><!--data below the first row-->
+        <td>83 - 85</td>
+        <td>Passed</td>
+    </tr>
+    <tr class="tabledesign">
+        <td>2.00</td><!--data below the first row-->
+        <td>86 - 88</td>
+        <td>Passed</td>
+    </tr>
+    <tr class="tabledesign">
+        <td>1.75</td><!--data below the first row-->
+        <td>89 - 91</td>
+        <td>Passed</td>
+    </tr>
+    <tr class="tabledesign">
+        <td>1.50</td><!--data below the first row-->
+        <td>92 - 94</td>
+        <td>Passed</td>
+    </tr>
+    <tr class="tabledesign">
+        <td>1.25</td><!--data below the first row-->
+        <td>95 - 97</td>
+        <td>Passed</td>
+    </tr>
+    <tr class="tabledesign">
+        <td>1.00</td><!--data below the first row-->
+        <td>98 - 100</td>
+        <td>Passed</td>
+    </tr>
+
+    </div>
+    
+    
+</table>
     
 <script>
 
@@ -99,6 +202,10 @@ Grade = function(Q1,Q2,Q3,P,E){
         alert ("Congratulations! Your grade is: " + MEGrade.toFixed(2));
     }
 
+        
+        
+    
+
     
 };
 
@@ -109,6 +216,7 @@ EquivalentScore = function(score,total){
     return (add);
     //console.log(add);
 };
+
 
 
 </script>
