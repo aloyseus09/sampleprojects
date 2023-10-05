@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Grade Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     .cent {
-        max-width: 100%;
       background-color: linen;
       border-style: double;
       border-width: 5px;
       border-radius: 5px;
-      margin: auto;
+      margin: 10px;
       text-align: center;
       padding: 10px;
+      
 
-        
+      
         font-family: Helvetica, sans-serif;
     }
 
     .elem {
-        max-width: 100%;
+        
         border-width: 5px;
         border-radius: 5px;
         margin: auto;
@@ -32,7 +32,8 @@
     }
     .buttonstyle{
         background-color: #4681f4;
-        border: none;
+        border: 1px solid #ccc;
+        
         border-radius: 5px;
         color: white;
         padding: 10px 10px;
@@ -100,10 +101,6 @@ Grade = function(Q1,Q2,Q3,P,E){
         alert ("Congratulations! Your grade is: " + MEGrade.toFixed(2));
     }
 
-        
-        
-    
-
     
 };
 
@@ -114,7 +111,6 @@ EquivalentScore = function(score,total){
     return (add);
     //console.log(add);
 };
-
 
 
 </script>
