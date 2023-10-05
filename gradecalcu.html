@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Grade Calculator</title>
+<style>
+    .cent {
+      background-color: linen;
+      border-style: double;
+      border-width: 5px;
+      border-radius: 5px;
+      margin: auto;
+      text-align: center;
+      padding: 10px;
+
+        content: "";
+        clear: both;
+        display: table;
+        font-family: Helvetica, sans-serif;
+    }
+
+    .elem {
+        
+        border-width: 5px;
+        border-radius: 5px;
+        margin: auto;
+        
+
+    }
+    .title{
+        text-align: center;
+        font-family: Garamond, serif;
+    }
+    .buttonstyle{
+        background-color: #4681f4;
+        border: none;
+        color: white;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 13px;
+        margin-right: 10px;
+        margin-left: 10px;
+
+    }
+
+    </style>
+</head>
+<body>
+    <h2 class="title"> Midterm Grade</h2>
+    <form class="cent" name="myForm" action="" method="GET">
+        
+        <label for="q1">Quiz 1:</label><br>
+        <input type="number" id="q1" name="q1" required><br>
+        <label for="q2">Quiz 2:</label><br>
+        <input type="number" id="q2" name="q2" required><br>
+        <label for="q3">Quiz 3:</label><br>
+        <input type="number" id="q3" name="q3" required><br>
+        <label for="ptask">Performance Task:</label><br>
+        <input type="number" id="ptask" name="ptask" required><br>
+        <label for="MExam">Midterm Exam:</label><br>
+        <input type="number" id="MExam" name="MExam" required><br><br>
+        
+        <input type="reset" class="buttonstyle" value="Reset">
+        <input type="button" class="buttonstyle" name="outputGrade" value="Submit" onclick="Grade(parseInt(q1.value),parseInt(q2.value),parseInt(q3.value),parseInt(ptask.value),parseInt(MExam.value))">
+        
+        
+        <br><br>
+        
+        <output name="grade" for="q1 q2 q3"></output>
+    </form>
+    
+<script>
+
+    //oninput="grade.value=(((parseInt(q1.value)+parseInt(q2.value)+parseInt(q3.value))/TotalQZ)*50)+50"
+    var TotalQ1 = 10;
+    var TotalQ2 = 15;
+    var TotalQ3 = 10;
+    var TotalQZ = TotalQ1+TotalQ2+TotalQ3;
+    var TotalP = 100;
+    var TotalME = 50;
+    var PercQ = 0.3;
+    var PercP = 0.3;
+    var PrecE = 0.4; 
+
+Grade = function(Q1,Q2,Q3,P,E){
+    var QT = Q1 + Q2 + Q3;
+    var QEquiv = EquivalentScore(QT,TotalQZ);
+    var PEquiv = EquivalentScore(P,TotalP);
+    var MEEquiv = EquivalentScore(E,TotalME);
+    var MEGrade = QEquiv*PercQ + PEquiv*PercP + MEEquiv*PrecE; 
+    console.log(QT);
+    console.log(Q1,Q2,Q3,P,E);
+    console.log(QEquiv,PEquiv,MEEquiv);
+
+    if(isNaN(QT)){
+        alert("Please input your scores");
+    }else{
+        alert ("Congratulations! Your grade is: " + MEGrade.toFixed(2));
+    }
+
+        
+        
+    
+
+    
+};
+
+EquivalentScore = function(score,total){
+    var divide = score/total;
+    var multi = divide*50;
+    var add = multi+50;
+    return (add);
+    //console.log(add);
+};
+
+
+
+</script>
+
+</body>
+</html>
